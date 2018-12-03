@@ -210,6 +210,12 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
             return cell
         case .custom:
             return messagesDataSource.customCell(for: message, at: indexPath, in: messagesCollectionView)
+        case .file:
+            return messagesDataSource.fileCell(for: message, at: indexPath, in: messagesCollectionView)
+        case .task:
+            return messagesDataSource.taskCell(for: message, at: indexPath, in: messagesCollectionView)
+        case .comment:
+            return messagesDataSource.commentCell(for: message, at: indexPath, in: messagesCollectionView)
         }
     }
 

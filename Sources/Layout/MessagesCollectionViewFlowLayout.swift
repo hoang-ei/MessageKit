@@ -166,6 +166,12 @@ open class MessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
             return locationMessageSizeCalculator
         case .custom:
             return messagesLayoutDelegate.customCellSizeCalculator(for: message, at: indexPath, in: messagesCollectionView)
+        case .file:
+            return messagesLayoutDelegate.fileCellSizeCalculator(for: message, at: indexPath, in: messagesCollectionView)
+        case .task:
+            return messagesLayoutDelegate.taskCellSizeCalculator(for: message, at: indexPath, in: messagesCollectionView)
+        case .comment:
+            return messagesLayoutDelegate.commentCellSizeCalculator(for: message, at: indexPath, in: messagesCollectionView)
         }
     }
 

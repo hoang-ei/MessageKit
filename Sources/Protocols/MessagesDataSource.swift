@@ -103,6 +103,12 @@ public protocol MessagesDataSource: AnyObject {
     /// - Note:
     ///   This method will call fatalError() on default. You must override this method if you are using MessageType.custom messages.
     func customCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
+    
+    func fileCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
+    
+    func taskCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
+    
+    func commentCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
 }
 
 public extension MessagesDataSource {
@@ -128,6 +134,18 @@ public extension MessagesDataSource {
     }
     
     func customCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
+        fatalError(MessageKitError.customDataUnresolvedCell)
+    }
+    
+    func fileCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
+        fatalError(MessageKitError.customDataUnresolvedCell)
+    }
+    
+    func taskCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
+        fatalError(MessageKitError.customDataUnresolvedCell)
+    }
+    
+    func commentCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
         fatalError(MessageKitError.customDataUnresolvedCell)
     }
 }
